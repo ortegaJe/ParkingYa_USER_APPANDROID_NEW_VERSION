@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/RegistroCapa"
+    tools:context=".RegisterMain">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_154sdp"
+        android:background="@drawable/gradientbackground"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgViewRegisUser"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_99sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_22sdp"
+            app:srcCompat="@drawable/userregister" />
+
+        <Button
+            android:layout_marginStart="@dimen/_10sdp"
+            android:onClick="scan"
+            android:layout_below="@+id/imgViewRegisUser"
+            android:layout_toRightOf="@+id/imgViewRegisUser"
+            android:background="@android:drawable/ic_menu_search"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_10sdp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txt_input_reg_name"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_45sdp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editText_RegNombre"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_user"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="@string/regNameUser"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_gravity="center"
+                android:id="@+id/txt_input_reg_email"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_gravity="center"
+                    android:id="@+id/editText_RegCorreo"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_email"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="@string/regEmailUser"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:id="@+id/txt_input_reg_pass"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_gravity="center"
+                    android:id="@+id/editText_RegConstraseña"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_pass"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="@string/regPassUser"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_gravity="center"
+                android:id="@+id/txt_input_reg_address"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_gravity="center"
+                    android:id="@+id/editText_RegDireccion"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:drawableLeft="@drawable/ic_action_addressreg"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="@string/regAddressUser"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_gravity="center"
+                android:id="@+id/txt_input_reg_age"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_gravity="center"
+                    android:id="@+id/editText_RegEdad"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_birthreg"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="@string/regAgeUser"
+                    android:inputType="text|date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_gravity="center"
+                android:id="@+id/txt_input_reg_tel"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_gravity="center"
+                    android:id="@+id/editText_RegTel"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_phonereg"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="@string/regPhoneUser"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_gravity="center"
+                android:id="@+id/txt_input_identi"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_gravity="center"
+                    android:id="@+id/editText_identific"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_pass"
+                    android:drawablePadding="@dimen/_4sdp"
+                    android:ems="10"
+                    android:hint="Identificación"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:onClick="btnRegist"
+                android:id="@+id/btn_RegistUser"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_25sdp"
+                android:background="@drawable/buttonstylegradientregister"
+                android:text="@string/regBtnRegistroUser"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

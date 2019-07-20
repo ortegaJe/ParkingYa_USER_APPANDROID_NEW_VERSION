@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservationsMain"
+    android:orientation="vertical"
+    android:background="#066336">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="400dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#066336"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:hint="ICON"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/iconnew"
+                            android:textColor="#008F4C"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/nombre_park_a_reservar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="NOMBRE DEL PARQUEADERO"
+                            android:paddingTop="10dp"
+                            android:textColor="#FFFF"
+                            android:textColorHint="#FFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <EditText
+                android:id="@+id/placa_usuario_a_reservar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:hint="Placa del auto"
+                android:textAllCaps="true"
+                android:textColorHint="#fff"
+                android:textColor="#ffff"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/horas_a_reservar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:hint="Horas a reservar"
+                android:textColor="#ffff"
+                android:inputType="number"
+                android:textColorHint="#fff"/>
+
+            <Button
+                android:id="@+id/btn_reg_reserv"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@drawable/buttonstylegradient"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="#066336"
+                android:text="Reservar"
+                android:textStyle="bold"/>
+
+        </LinearLayout>

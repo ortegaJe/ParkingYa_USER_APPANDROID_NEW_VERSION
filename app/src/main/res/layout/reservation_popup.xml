@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="@dimen/_270sdp"
+    android:layout_gravity="center"
+    android:background="#066336">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_toLeftOf="@+id/costtv"
+            android:id="@+id/tvtextcost"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#FFF"
+            android:text="Hora $"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:id="@+id/costtv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#FFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_10sdp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_30sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#066336"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+                <ImageView
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:hint="ICON"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:src="@drawable/iconnew"
+                    android:textColor="#008F4C"
+                    android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/nombre_park_a_reservar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="NOMBRE DEL PARQUEADERO"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:textColor="#FFFF"
+                    android:textColorHint="#FFFF"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+        <EditText
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/cardView"
+            android:id="@+id/placa_veh"
+            android:textSize="@dimen/_14sdp"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Placa del vehículo"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:maxLength="6"
+            android:textColorHint="#fff"
+            android:textColor="#ffff"
+            android:inputType="textCapCharacters"/>
+
+        <EditText
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14sdp"
+            android:layout_below="@+id/placa_veh"
+            android:id="@+id/hours"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Horas a reservar"
+            android:textAllCaps="true"
+            android:textColorHint="#fff"
+            android:textColor="#ffff"
+            android:inputType="number"/>
+
+        <Button
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_alignStart="@+id/hours"
+            android:layout_below="@+id/hours"
+            android:id="@+id/btn_reserv"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_14sdp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@drawable/buttonstylegradient"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="#066336"
+            android:text="Reservar"
+            android:textStyle="bold"
+            android:layout_alignLeft="@+id/hours"
+            android:layout_marginBottom="@dimen/_20sdp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
