@@ -1,8 +1,10 @@
 package com.example.jeffe.login;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +14,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -49,22 +50,35 @@ public class LoginMain extends AppCompatActivity {
 
     public void validate(View v){
 
-        String email= txtInputEmail.getText().toString();
-        String password= txtInputContraseña.getText().toString();
-        if(!email.isEmpty()){
-            if(!password.isEmpty()){
-                AccessLogin(email,password);
+        String email_input= txtInputEmail.getText().toString();
+        String password_input= txtInputContraseña.getText().toString();
+
+        if(!email_input.isEmpty()){
+            if(!password_input.isEmpty()){
+                AccessLogin(email_input,password_input);
             }else{
-                Toast.makeText(this, "Debe llenar el campo password", Toast.LENGTH_SHORT).show();
+                Snackbar snackbar;
+                snackbar = Snackbar.make(v, "Debe completar el campo contraseña!", Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                snackbar.show();
             }
-        }else{
-            txtInputEmail.setError("Este campo no puede estar vacio.");
-            Toast.makeText(this, "Debe llenar el campo email", Toast.LENGTH_SHORT).show();
-        }
+                 }else{
+                     Snackbar snackbar;
+                     snackbar = Snackbar.make(v, "Debe completar el campo email!", Snackbar.LENGTH_SHORT);
+                     View snackBarView = snackbar.getView();
+                     snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                     TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                     textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                     snackbar.show();
+            }
     }
 
 
     private void AccessLogin(final String email, final String password){
+
         mainL.setAlpha((float) 0.0);
         progress.setVisibility(View.VISIBLE);
         Response.Listener<String> responseListener= new Response.Listener<String>() {
@@ -94,9 +108,16 @@ public class LoginMain extends AppCompatActivity {
                         LoginMain.this.startActivity(intent);
                         finish();
                     }else{
-                        AlertDialog.Builder builder= new AlertDialog.Builder(LoginMain.this);
+                        final AlertDialog.Builder builder= new AlertDialog.Builder(LoginMain.this);
                         builder.setMessage("Ups! credencial no registrada, por favor verifique su credencial.")
-                                .setNegativeButton("Reintentar",null)
+                                .setNegativeButton("Reintentar", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int i) {
+                                        Intent retryIntent = new Intent(LoginMain.this, LoginMain.class);
+                                        startActivity(retryIntent);
+                                        finish();
+                                    }
+                                })
                                 .create().show();
 
                     }

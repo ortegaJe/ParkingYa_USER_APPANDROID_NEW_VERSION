@@ -4,9 +4,11 @@ import android.annotation.TargetApi;
 import android.app.DatePickerDialog;
 import android.app.Notification;
 import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -43,8 +46,9 @@ public class RegisterMain extends AppCompatActivity implements  interfaceListene
     http http;
     public final int CUSTOMIZED_REQUEST_CODE = 0x0000ffff;
     EditText nombre_a_registro, correo_a_registro,
-             contraseña_a_registro, edad_a_registro,
+             contraseña_a_registro,
              direccion_a_registro, tel_a_registro, identifi_a_registro;
+    TextView edad_a_registro;
     Button btn_RegistUser;
     private NotificationHelper helper;
 
@@ -108,25 +112,67 @@ public class RegisterMain extends AppCompatActivity implements  interfaceListene
                                 if (!identifi.isEmpty()) {
                                     register(name, email, password, age, address, phone, identifi);
                                 }else{
-                                    identifi_a_registro.setError("Este campo no puede estar vacio!");
+                                    Snackbar snackbar;
+                                    snackbar = Snackbar.make(v, "Escriba su numero de identificación por favor!", Snackbar.LENGTH_SHORT);
+                                    View snackBarView = snackbar.getView();
+                                    snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                                    TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                                    textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                                    snackbar.show();
                                 }
                             }else{
-                                tel_a_registro.setError("Este campo no puede estar vacio!");
+                                Snackbar snackbar;
+                                snackbar = Snackbar.make(v, "Escriba un telefono por favor!", Snackbar.LENGTH_SHORT);
+                                View snackBarView = snackbar.getView();
+                                snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                                TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                                textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                                snackbar.show();
                             }
                         }else{
-                            direccion_a_registro.setError("Este campo no puede estar vacio!");
+                            Snackbar snackbar;
+                            snackbar = Snackbar.make(v, "Escriba una dirección por favor!", Snackbar.LENGTH_SHORT);
+                            View snackBarView = snackbar.getView();
+                            snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                            TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                            textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                            snackbar.show();
                         }
                     }else{
-                        edad_a_registro.setError("Este campo no puede estar vacio!");
+                        Snackbar snackbar;
+                        snackbar = Snackbar.make(v, "Ingrese una fecha de nacimiento por favor!", Snackbar.LENGTH_SHORT);
+                        View snackBarView = snackbar.getView();
+                        snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                        TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                        textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                        snackbar.show();
                     }
                 }else{
-                    contraseña_a_registro.setError("Este campo no puede estar vacio!");
+                    Snackbar snackbar;
+                    snackbar = Snackbar.make(v, "Escriba un contraseña por favor!", Snackbar.LENGTH_SHORT);
+                    View snackBarView = snackbar.getView();
+                    snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                    TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                    snackbar.show();
                 }
             }else{
-               correo_a_registro.setError("Este campo no puede estar vacio!");
+                Snackbar snackbar;
+                snackbar = Snackbar.make(v, "Escriba un email por favor!", Snackbar.LENGTH_SHORT);
+                View snackBarView = snackbar.getView();
+                snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+                TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+                snackbar.show();
             }
         } else {
-            nombre_a_registro.setError("Este campo no puede estar vacio!");
+            Snackbar snackbar;
+            snackbar = Snackbar.make(v, "Escriba un nombre por favor!", Snackbar.LENGTH_SHORT);
+            View snackBarView = snackbar.getView();
+            snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
+            TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(getResources().getColor(R.color.colorGreenForSnack));
+            snackbar.show();
         }
     }
 
@@ -146,7 +192,7 @@ public class RegisterMain extends AppCompatActivity implements  interfaceListene
                         Intent intent= new Intent(RegisterMain.this,LoginMain.class);
                         RegisterMain.this.startActivity(intent);
                         //notificationUsers();
-                        Toasty.success(RegisterMain.this, ""+msg, Toast.LENGTH_SHORT, true).show();
+                        Toasty.success(RegisterMain.this, ""+msg, Toast.LENGTH_LONG, true).show();
 
                     }else{
                         AlertDialog.Builder builder= new AlertDialog.Builder(RegisterMain.this);

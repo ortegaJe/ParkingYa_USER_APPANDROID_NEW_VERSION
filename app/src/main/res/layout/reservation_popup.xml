@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_width="@dimen/_270sdp"
     android:layout_gravity="center"
-    android:background="#066336">
+    android:background="@drawable/gradient_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -52,7 +52,8 @@
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_60sdp"
                     android:hint="ICON"
-                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_4sdp"
                     android:src="@drawable/iconnew"
                     android:textColor="#008F4C"
                     android:textStyle="bold" />
@@ -127,7 +128,7 @@
             android:layout_gravity="center"
             android:textSize="@dimen/_14sdp"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:background="@drawable/buttonstylegradient"
+            android:background="@drawable/button_style_gradient_login"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textColor="#066336"
             android:text="Reservar"

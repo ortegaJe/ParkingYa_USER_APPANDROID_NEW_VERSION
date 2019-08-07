@@ -1,6 +1,6 @@
 <resources>
     <!--Inicio-->
-    <string name="app_name">ParkingYa!</string>
+    <string name="app_name">Parking Ya!</string>
 
     <!--Login del usuario-->
     <string name="userEdTxtLogin">Email:</string>
@@ -12,7 +12,7 @@
     <string name="regNameUser">Nombres y apellidos</string>
     <string name="regEmailUser">Email</string>
     <string name="regPassUser">Contraseña</string>
-    <string name="regAgeUser">Edad</string>
+    <string name="regAgeUser">Fecha de nacimiento</string>
     <string name="regAddressUser">Dirección</string>
     <string name="regPhoneUser">Telefono</string>
     <string name="regBtnRegistroUser">Registrarse</string>
@@ -33,6 +33,7 @@
     <string name="picture_notification_content">Bienvenido, reserve ahora !</string>
     <string name="picture_channel_name">Picture</string>
     <string name="SMS">SMS</string>
+
 
 
 </resources>

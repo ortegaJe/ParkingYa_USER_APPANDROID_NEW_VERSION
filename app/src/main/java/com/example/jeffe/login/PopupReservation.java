@@ -80,7 +80,7 @@ public class PopupReservation {
         client.setConnectTimeout(10000);
         client.setTimeout(10000);
 
-        client.post("http://192.168.1.58:8080/backendParkingya/ReservDates.php", params,new AsyncHttpResponseHandler() {
+        client.post("http://"+Constants.REQUEST_URL+"/backendParkingya/ReservDates.php", params,new AsyncHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -98,7 +98,8 @@ public class PopupReservation {
 
                             case 2:
                             case 0:
-                                interfaceListener.onPlacesListener(3, ParkingsMapMarkers.class, jsonArray);
+                                interfaceListener.onPlacesListener(3
+                                        , ParkingsMapMarkers.class, jsonArray);
                                 break;
 
                             default:

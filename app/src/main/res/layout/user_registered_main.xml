@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_231sdp"
-            android:background="@drawable/gradientbackground"
+            android:background="@drawable/gradient_background"
             android:orientation="vertical">
 
             <ImageView
@@ -160,7 +160,8 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_230sdp"
+            android:background="@drawable/gradient_background_user_registered_fields"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/_18sdp">
@@ -177,6 +178,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="jeffersonj-o@hotmail.com"
+                android:textColor="@color/colorPrimaryDark"
                 android:paddingLeft="@dimen/_15sdp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -205,7 +207,8 @@
         </LinearLayout-->
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_230sdp"
+            android:background="@drawable/gradient_background_user_registered_fields"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
             android:orientation="horizontal"
@@ -223,12 +226,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="10/08/1991"
+                android:textColor="@color/colorPrimaryDark"
                 android:paddingLeft="@dimen/_15sdp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_230sdp"
+            android:background="@drawable/gradient_background_user_registered_fields"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
             android:orientation="horizontal"
@@ -246,12 +251,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="CALLE 75 #56-58"
+                android:textColor="@color/colorPrimaryDark"
                 android:paddingLeft="@dimen/_15sdp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_230sdp"
+            android:background="@drawable/gradient_background_user_registered_fields"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
             android:orientation="horizontal"
@@ -269,6 +276,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="+573002777694"
+                android:textColor="@color/colorPrimaryDark"
                 android:paddingLeft="@dimen/_15sdp"
                 android:textStyle="bold" />
         </LinearLayout>

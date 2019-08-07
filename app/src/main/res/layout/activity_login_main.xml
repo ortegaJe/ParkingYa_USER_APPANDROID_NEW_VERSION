@@ -49,6 +49,7 @@
             android:drawablePadding="@dimen/_4sdp"
             android:ems="10"
             android:hint="Email"
+            android:text="jeffersonj-o@hotmail.com"
             android:inputType="textEmailAddress"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +81,7 @@
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword"
-            android:text=""
+            android:text="1010"
             android:textColorHint="#fff"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,21 +91,21 @@
     </android.support.design.widget.TextInputLayout>
 
 
-    <Button
-        android:id="@+id/btn_enter"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="@dimen/_155sdp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:background="@drawable/buttonstylegradient"
-        android:onClick="validate"
-        android:text="@string/enterBtnLogin"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="#066336"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_enter"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/_155sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/button_style_gradient_login"
+            android:onClick="validate"
+            android:text="@string/enterBtnLogin"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="#066336"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView_registerLogin"

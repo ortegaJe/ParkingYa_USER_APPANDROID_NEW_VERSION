@@ -14,7 +14,7 @@ public class http {
     String id;
     RequestParams params = new RequestParams();
     interfaceListener interfaceListener;
-    String ipserver = "192.168.1.58:8080";
+    //String ipserver = "192.168.1.58:8080";
 
 
     public http(interfaceListener interfaceListener){
@@ -26,7 +26,7 @@ public class http {
         client.setMaxRetriesAndTimeout(0, 10000);
         client.setConnectTimeout(10000);
         client.setTimeout(10000);
-        client.post("http://"+ipserver+"/backendParkingya/getPlaces.php", new AsyncHttpResponseHandler() {
+        client.post("http://"+Constants.REQUEST_URL+"/backendParkingya/getPlaces.php", new AsyncHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {

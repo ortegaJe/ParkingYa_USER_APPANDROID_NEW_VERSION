@@ -43,11 +43,14 @@ import es.dmoral.toasty.Toasty;
 
 
 public class ParkingsMapMarkers extends AppCompatActivity implements interfaceListener,
-        OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener,GoogleMap.OnMyLocationButtonClickListener,
-        GoogleMap.OnMyLocationClickListener,
-        ActivityCompat.OnRequestPermissionsResultCallback{
+                                                                     OnMapReadyCallback,
+                                                                     GoogleMap.OnInfoWindowClickListener,
+                                                                     GoogleMap.OnMyLocationButtonClickListener,
+                                                                     GoogleMap.OnMyLocationClickListener,
+                                                                     ActivityCompat.OnRequestPermissionsResultCallback{
 
     ConnectionDetector cd;
+
     private SharedPreferences pref;
     private final String MyPREFERENCES = "MyPrefs";
     ArrayList count     = new ArrayList();
@@ -58,8 +61,11 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
     ArrayList cost = new ArrayList();
     RelativeLayout mainL;
     ProgressBar progress;
+
     http http;
+
     PopupReservation popupReservation;
+
     private GoogleMap mMap;
     private Marker[] markers;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -77,6 +83,7 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
         relativeLayout =findViewById(R.id.capaRelativL);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
         mapFragment.getMapAsync(this);
         pref     = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
@@ -94,12 +101,13 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                      switch (menuItem.getItemId()) {
                          case R.id.nav_home:
                              Snackbar snackbar;
-                             snackbar= Snackbar.make(relativeLayout,"Cerrar sessión ?",Snackbar.LENGTH_LONG);
+                             snackbar= Snackbar.make(relativeLayout,"Cerrar sesión?",Snackbar.LENGTH_LONG);
                              View snackBarView = snackbar.getView();
                              snackbar.setAction("SI", new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
                                              Intent intentExit = new Intent(ParkingsMapMarkers.this, LoginMain.class);
+
                                              SharedPreferences.Editor editor = pref.edit();
                                              editor.putString(Constants.ID,"");
                                              editor.putString(Constants.EMAIL,"");
@@ -119,10 +127,12 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                              textView.setTextColor(Color.WHITE);
                              snackbar.show();
                              break;
+
                          case R.id.nav_map:
                              Intent intentMap = new Intent(ParkingsMapMarkers.this, ParkingsMapMarkers.class);
                              startActivity(intentMap);
                              break;
+
                          case R.id.nav_user:
                              Intent intentUser = new Intent(ParkingsMapMarkers.this, UserRegistredMain.class);
                              startActivity(intentUser);
