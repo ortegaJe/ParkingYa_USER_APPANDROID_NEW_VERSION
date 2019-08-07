@@ -38,11 +38,13 @@
         <activity android:name=".UserRegistredMain" android:screenOrientation="portrait" />
 
         <activity android:name=".SplashMain" android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
     </application>
