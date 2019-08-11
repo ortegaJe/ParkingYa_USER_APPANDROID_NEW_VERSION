@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home2_black_24dp"
-        android:title="Home" />
+        android:icon="@drawable/ic_action_sign_out_login"
+        android:title="Salir" />
 
     <item
         android:id="@+id/nav_map"

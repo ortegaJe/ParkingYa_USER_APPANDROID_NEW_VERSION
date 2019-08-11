@@ -17,11 +17,11 @@
         android:id="@+id/textView_beta_version"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Beta versión 1.0.0"
+        android:text="Beta versión 2.0.0"
         android:textColor="#ffff" />
 
     <ImageView
-        android:id="@+id/img_logo_login"
+        android:id="@+id/logo_login_user"
         android:layout_width="@dimen/_115sdp"
         android:layout_height="@dimen/_116sdp"
         android:layout_gravity="center"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_input_login_name"
-        app:passwordToggleEnabled="true"
+        app:passwordToggleEnabled="false"
         app:passwordToggleTint="@color/colorYellowForSnack"
         >
 
@@ -82,7 +82,7 @@
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword"
-            android:text="1010"
+            android:text="1234"
             android:textColorHint="#fff"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"

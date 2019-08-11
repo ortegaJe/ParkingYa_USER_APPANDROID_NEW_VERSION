@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_place_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/device/ic_access_time_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -46,7 +46,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="paddingPercent" value="5" />
+                                                <entry key="paddingPercent" value="15" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -67,11 +67,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\jeffe\MEGAcloud\ITSA\CICLO_TECNOLOGICO\ANDROID\PROYECTO_APP_PARKING_YA_ANDROID-2019\ParkingYa-APPANDROID_NEW_VERSION\ParkingYa-APPANDROID-master\app\src\main\res\drawable\iconnew.png" />
-                                      <entry key="outputName" value="ic_action_identity_barcode" />
+                                      <entry key="imageAsset" value="D:\jeffe\Descargas\signout256pxx.png" />
+                                      <entry key="outputName" value="ic_action_hours_time" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="008f4c" />
+                                      <entry key="themeColor" value="ffe500" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -121,13 +120,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="008f4c" />
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
                                       <entry key="foregroundImage" value="C:\Users\jeffe\MEGAcloud\ITSA\CICLO_TECNOLOGICO\ANDROID\PROYECTO_APP_PARKING_YA_ANDROID-2019\ParkingYa-APPANDROID_NEW_VERSION\ParkingYa-APPANDROID-master\app\src\main\res\drawable\iconnew.png" />
                                       <entry key="foregroundLayerName" value="ic_launcher_foreground_pya" />
-                                      <entry key="legacyIconShape" value="CIRCLE" />
                                       <entry key="outputName" value="ic_launcher_pya" />
-                                      <entry key="webIconShape" value="CIRCLE" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -175,6 +171,11 @@
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

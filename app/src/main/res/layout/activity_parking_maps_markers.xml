@@ -51,6 +51,6 @@
         android:layout_width="@dimen/_60sdp"
         android:layout_height="@dimen/_60sdp"
         style="@style/SpinKitView.Small.Circle"
-        app:SpinKit_Color="@color/colorOrange"/>
+        app:SpinKit_Color="@color/colorYellowForSnack"/>
 
 </RelativeLayout>

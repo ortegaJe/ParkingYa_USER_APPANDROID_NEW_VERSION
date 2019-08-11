@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -29,10 +30,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,7 +77,6 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
     private boolean mPermissionDenied = false;
     private RelativeLayout relativeLayout;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +105,7 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                      switch (menuItem.getItemId()) {
                          case R.id.nav_home:
                              Snackbar snackbar;
-                             snackbar= Snackbar.make(relativeLayout,"Cerrar sesión?",Snackbar.LENGTH_LONG);
+                             snackbar= Snackbar.make(relativeLayout,"Desea cerrar sesión?",Snackbar.LENGTH_LONG);
                              View snackBarView = snackbar.getView();
                              snackbar.setAction("SI", new View.OnClickListener() {
                                          @Override
@@ -155,6 +159,8 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
         addMarkersToMap(); //Get markets from DB.
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.setOnInfoWindowClickListener((GoogleMap.OnInfoWindowClickListener) this);
+
+
     }
 
     private void addMarkersToMap() {
@@ -183,8 +189,10 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
             mMap.setMyLocationEnabled(true);
             // Deshabilitar boton de localizar ubicacion
             //mMap.getUiSettings().setMyLocationButtonEnabled(false);
+            mMap.getUiSettings().setMapToolbarEnabled(false);
         }
     }
+
 
     @Override
     public boolean onMyLocationButtonClick() {
@@ -196,6 +204,7 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
 
     @Override
     public void onMyLocationClick(@NonNull Location location) {
+        Toast.makeText(this, "Hi, i'm here!", Toast.LENGTH_LONG).show();
         //Toast.makeText(this, "Current location:\n" + location, Toast.LENGTH_LONG).show();
     }
 
@@ -243,12 +252,12 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                 int setid = marker.getId().indexOf("m");
                 final String suffix = marker.getId().substring(setid+1);
                 if(count.get(Integer.parseInt(suffix)).equals("0")){
-                    snackbar = Snackbar.make(relativeLayout, "¡El Parqueadero seleccionado no tiene espacios disponibles!", Snackbar.LENGTH_LONG);
+                    snackbar = Snackbar.make(relativeLayout, "Parqueadero sin espacios disponibles!", Snackbar.LENGTH_LONG);
                     snackBarView = snackbar.getView();
-                    snackbar.setActionTextColor(Color.WHITE);
                     snackBarView.setBackgroundColor(getResources().getColor(R.color.colorOrange));
+
                 }else{
-                        snackbar = Snackbar.make(relativeLayout, "Esta seguro que desea reservar aqui? Espacios Disponibles " + count.get(Integer.parseInt(suffix)), Snackbar.LENGTH_LONG);
+                        snackbar = Snackbar.make(relativeLayout, "Espacios disponibles: " + count.get(Integer.parseInt(suffix)), Snackbar.LENGTH_LONG);
                         snackBarView = snackbar.getView();
                         snackbar.setAction("Reservar", new View.OnClickListener() {
                             @Override
@@ -281,14 +290,16 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                         parkiname.add(i,data.getJSONObject(i).get("name"));
                         b.include(new LatLng(data.getJSONObject(i).getDouble("latitud"),data.getJSONObject(i).getDouble("longitud")));
                         markers[i] = mMap.addMarker(new MarkerOptions()
+                                        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher_foreground_pya))
+                                        //.icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.taj)));
                                         .position(new LatLng(data.getJSONObject(i).getDouble("latitud"),data.getJSONObject(i).getDouble("longitud")))
                                         .title("Parking Ya! " +data.getJSONObject(i).getString("name"))
-                                        .snippet("Horario de Atención: "+data.getJSONObject(i).getString("fini")+"-"+data.getJSONObject(i).getString("ffin")
+                                        .snippet("Horario de atención: "+data.getJSONObject(i).getString("fini")+" a "+data.getJSONObject(i).getString("ffin")
                                         )
                         );
                     }
                     LatLngBounds bounds = b.build();
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 50));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 250));
                     mainL.setAlpha(1);
                     progress.setVisibility(View.INVISIBLE);
                 } catch (JSONException e) {

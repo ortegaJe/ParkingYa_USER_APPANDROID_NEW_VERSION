@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_width="@dimen/_270sdp"
     android:layout_gravity="center"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/gradient_background_popup">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,8 +15,9 @@
             android:layout_toLeftOf="@+id/costtv"
             android:id="@+id/tvtextcost"
             android:textSize="@dimen/_14sdp"
-            android:textColor="#FFF"
-            android:text="Hora $"
+            android:textColor="#FFFFFF"
+            android:text="Valor por hora $"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -26,7 +27,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/_10sdp"
             android:textSize="@dimen/_14sdp"
-            android:textColor="#FFF"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -41,30 +43,27 @@
         android:layout_marginTop="@dimen/_30sdp">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#066336"
+            android:layout_width="326dp"
+            android:layout_height="79dp"
+            android:background="@drawable/gradient_background_popup"
             android:orientation="horizontal"
             android:weightSum="2">
 
 
-                <ImageView
-                    android:layout_width="@dimen/_70sdp"
-                    android:layout_height="@dimen/_60sdp"
-                    android:hint="ICON"
-                    android:paddingTop="@dimen/_8sdp"
-                    android:paddingBottom="@dimen/_4sdp"
-                    android:src="@drawable/iconnew"
-                    android:textColor="#008F4C"
-                    android:textStyle="bold" />
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:src="@drawable/iconnew" />
 
             <LinearLayout
-                android:layout_width="@dimen/_180sdp"
+                android:layout_width="258dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/nombre_park_a_reservar"
@@ -89,6 +88,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/cardView"
             android:id="@+id/placa_veh"
+            android:drawableLeft="@drawable/ic_action_sign_car_plate"
             android:textSize="@dimen/_14sdp"
             android:layout_width="@dimen/_140sdp"
             android:layout_height="wrap_content"
@@ -97,9 +97,9 @@
             android:textStyle="bold"
             android:textAllCaps="true"
             android:maxLength="6"
-            android:textColorHint="#fff"
+            android:textColorHint="#D8FFFFFF"
             android:textColor="#ffff"
-            android:inputType="textCapCharacters"/>
+            android:inputType="textCapWords"/>
 
         <EditText
             android:textAlignment="center"
@@ -109,32 +109,36 @@
             android:textSize="@dimen/_14sdp"
             android:layout_below="@+id/placa_veh"
             android:id="@+id/hours"
-            android:layout_width="@dimen/_140sdp"
+            android:drawableLeft="@drawable/ic_action_hours_time"
+            android:layout_width="@dimen/_130sdp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:hint="Horas a reservar"
+            android:maxLength="2"
             android:textAllCaps="true"
-            android:textColorHint="#fff"
-            android:textColor="#ffff"
+            android:textColorHint="#D8FFFFFF"
+            android:textColor="#D8FFFFFF"
             android:inputType="number"/>
 
         <Button
-            android:layout_marginTop="@dimen/_25sdp"
-            android:layout_alignStart="@+id/hours"
-            android:layout_below="@+id/hours"
             android:id="@+id/btn_reserv"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="@dimen/_140sdp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/hours"
+            android:layout_alignStart="@+id/hours"
+            android:layout_alignLeft="@+id/hours"
             android:layout_gravity="center"
-            android:textSize="@dimen/_14sdp"
-            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_marginStart="-11dp"
+            android:layout_marginLeft="-11dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:background="@drawable/button_style_gradient_login"
+            android:text="Reservar"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textColor="#066336"
-            android:text="Reservar"
-            android:textStyle="bold"
-            android:layout_alignLeft="@+id/hours"
-            android:layout_marginBottom="@dimen/_20sdp"/>
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

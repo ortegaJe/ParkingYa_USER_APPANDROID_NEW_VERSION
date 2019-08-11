@@ -5,6 +5,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Selection;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +44,8 @@ public class PopupReservation {
         final EditText placa = alertDialog.findViewById(R.id.placa_veh);
         final EditText hours = alertDialog.findViewById(R.id.hours);
         Button btn_register = alertDialog.findViewById(R.id.btn_reserv);
+
+        placa.setFilters(new InputFilter[]{new InputFilter.AllCaps(), new InputFilter.LengthFilter(6)});
 
         title.setText(tvtitle);
         costTv.setText(cost);
