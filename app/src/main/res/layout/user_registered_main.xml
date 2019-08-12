@@ -278,7 +278,7 @@
         android:contextClickable="true"
         android:src="@drawable/ic_action_fab_pqr"
         android:tooltipText="Genera una PQR"
-        app:backgroundTint="@color/colorGreenForSnack" />
+        app:backgroundTint="@color/colorOrange" />
 
 
 

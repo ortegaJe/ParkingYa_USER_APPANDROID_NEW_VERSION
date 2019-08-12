@@ -50,6 +50,7 @@
             android:ems="10"
             android:hint="Email"
             android:text="jeffersonj-o@hotmail.com"
+            android:digits="abcdefghijklmnopqrstuvwxyz@.-_1234567890"
             android:inputType="textEmailAddress"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,8 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_input_login_name"
         app:passwordToggleEnabled="false"
-        app:passwordToggleTint="@color/colorYellowForSnack"
-        >
+        app:passwordToggleTint="@color/colorYellowForSnack">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/editText_LoginPass"

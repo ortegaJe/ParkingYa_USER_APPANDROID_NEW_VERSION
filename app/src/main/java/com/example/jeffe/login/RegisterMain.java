@@ -9,6 +9,8 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,10 +47,13 @@ public class RegisterMain extends AppCompatActivity implements  interfaceListene
     Calendar c;
     http http;
     public final int CUSTOMIZED_REQUEST_CODE = 0x0000ffff;
+
     EditText nombre_a_registro, correo_a_registro,
-             contraseña_a_registro,
-             direccion_a_registro, tel_a_registro, identifi_a_registro;
+            contraseña_a_registro,direccion_a_registro,
+            tel_a_registro, identifi_a_registro;
+
     TextView edad_a_registro;
+
     Button btn_RegistUser;
     private NotificationHelper helper;
 

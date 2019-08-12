@@ -59,7 +59,7 @@ public class LoginMain extends AppCompatActivity {
                 AccessLogin(email_input,password_input);
             }else{
                 Snackbar snackbar;
-                snackbar = Snackbar.make(v, "Debe completar el campo contraseña!", Snackbar.LENGTH_SHORT);
+                snackbar = Snackbar.make(v, "Debe ingresar una contraseña!", Snackbar.LENGTH_SHORT);
                 View snackBarView = snackbar.getView();
                 snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
                 TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
@@ -68,7 +68,7 @@ public class LoginMain extends AppCompatActivity {
             }
                  }else{
                      Snackbar snackbar;
-                     snackbar = Snackbar.make(v, "Debe completar el campo email!", Snackbar.LENGTH_SHORT);
+                     snackbar = Snackbar.make(v, "Debe ingresar un email!", Snackbar.LENGTH_SHORT);
                      View snackBarView = snackbar.getView();
                      snackBarView.setBackgroundColor(getResources().getColor(R.color.colorYellowForSnack));
                      TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
