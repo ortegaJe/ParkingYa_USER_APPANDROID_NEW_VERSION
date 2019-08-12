@@ -153,6 +153,7 @@
         app:itemTextColor="@color/colorPrimaryDark" />
 
     <LinearLayout
+        android:id="@+id/dates_user_registered"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -182,29 +183,6 @@
                 android:paddingLeft="@dimen/_15sdp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <!--LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_18sdp">
-
-            <ImageView
-                android:id="@+id/img_pass_reg_user"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/ic_action_pass" />
-
-            <TextView
-                android:id="@+id/textView_PasswordRegis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="AdfAz*5Er012"
-                android:paddingLeft="@dimen/_15sdp"
-                android:textStyle="bold" />
-        </LinearLayout-->
 
         <LinearLayout
             android:layout_width="@dimen/_230sdp"
@@ -282,6 +260,27 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <include layout="@layout/content_main"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_pqr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginHorizontal="@dimen/_240sdp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="43dp"
+        android:contextClickable="true"
+        android:src="@drawable/ic_action_fab_pqr"
+        android:tooltipText="Genera una PQR"
+        app:backgroundTint="@color/colorGreenForSnack" />
+
+
 
 </RelativeLayout>
 

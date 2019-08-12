@@ -100,7 +100,7 @@
                     android:background="@drawable/gradient_background_register_fields"
                     android:lastBaselineToBottomHeight="@dimen/_12sdp"
                     android:autoSizeMaxTextSize="@dimen/_12sdp"
-                    android:digits="abcdefghijklmnopqrstuvwxyz@.-_"
+                    android:digits="abcdefghijklmnopqrstuvwxyz@.-_1234567890"
                     android:maxLines="1"
                     android:lines="1"
                     android:maxLength="30"

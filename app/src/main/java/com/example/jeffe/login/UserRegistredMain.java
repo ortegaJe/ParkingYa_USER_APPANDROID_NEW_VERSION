@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class UserRegistredMain extends AppCompatActivity {
@@ -22,6 +24,8 @@ public class UserRegistredMain extends AppCompatActivity {
     private final String MyPREFERENCES = "MyPrefs";
     private RelativeLayout RelativeLayoutUser;
     private TextView t1_name, t2_email, t4_age, t5_address, t6_tel;
+
+    PopupReservation popupReservationPqr;
 
 
     @Override
@@ -52,7 +56,15 @@ public class UserRegistredMain extends AppCompatActivity {
 
         BottomNavigationView navigationActivity = findViewById(R.id.user_page_navigation);
         navigationActivity.setOnNavigationItemSelectedListener(OpenActivity);
-        //BottomNavigationView navigation = findViewById(R.id.user_page_navigation);
+
+        FloatingActionButton fab = findViewById(R.id.fab_add_pqr);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                 Snackbar.make(view, "Realiza una pqr", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show();
+            }
+        });
 
     }
 
@@ -96,12 +108,6 @@ public class UserRegistredMain extends AppCompatActivity {
                             Intent intentMap = new Intent(UserRegistredMain.this, ParkingsMapMarkers.class);
                             startActivity(intentMap);
                             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                            break;
-                        case R.id.nav_user:
-                            Intent intentUser = new Intent(UserRegistredMain.this, UserRegistredMain.class);
-                            startActivity(intentUser);
-                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
                             break;
                     }
                     return true;
