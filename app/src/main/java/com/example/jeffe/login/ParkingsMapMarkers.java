@@ -16,6 +16,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+
+import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -45,6 +47,8 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import es.dmoral.toasty.Toasty;
+
+import static com.loopj.android.http.AsyncHttpClient.LOG_TAG;
 
 
 public class ParkingsMapMarkers extends AppCompatActivity implements interfaceListener,
@@ -82,11 +86,13 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking_maps_markers);
 
+        pref= getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         mainL    = findViewById(R.id.mainlayout);
         progress = findViewById(R.id.progress);
         relativeLayout =findViewById(R.id.capaRelativL);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
 
         mapFragment.getMapAsync(this);
         pref     = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
@@ -122,6 +128,9 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                                              editor.putBoolean(Constants.IS_LOGGED,false);
                                              editor.apply();
                                              startActivity(intentExit);
+                                             finish();
+
+                                             //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                                          }
                                      });
 
@@ -133,20 +142,20 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                              break;
 
                          case R.id.nav_map:
-                             Intent intentMap = new Intent(ParkingsMapMarkers.this, ParkingsMapMarkers.class);
-                             startActivity(intentMap);
                              break;
 
                          case R.id.nav_user:
                              Intent intentUser = new Intent(ParkingsMapMarkers.this, UserRegistredMain.class);
                              startActivity(intentUser);
                              overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
+                             finish();
                              break;
                      }
                      return true;
                  }
              };
+
+
 
 
     @Override
@@ -204,7 +213,7 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
 
     @Override
     public void onMyLocationClick(@NonNull Location location) {
-        Toast.makeText(this, "Hi, i'm here!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Hello! Muthafucker", Toast.LENGTH_LONG).show();
         //Toast.makeText(this, "Current location:\n" + location, Toast.LENGTH_LONG).show();
     }
 
@@ -310,13 +319,14 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
                 try {
                     Snackbar snackbar;
                     View snackBarView;
-                    snackbar = Snackbar.make(relativeLayout, ""+data.getJSONObject(0).get("msg")+" Espacio "+data.getJSONObject(0).getString("space"), Snackbar.LENGTH_LONG);
+                    snackbar = Snackbar.make(relativeLayout, ""+data.getJSONObject(0).get("msg")+" - Espacio "+data.getJSONObject(0).getString("space"), Snackbar.LENGTH_LONG);
                     snackBarView = snackbar.getView();
                     snackbar.setActionTextColor(Color.WHITE);
                     snackBarView.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                     TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                     textView.setTextColor(Color.WHITE);
                     snackbar.show();
+                    sendTestEmail();
                     addMarkersToMap();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -352,4 +362,56 @@ public class ParkingsMapMarkers extends AppCompatActivity implements interfaceLi
         popupReservation = new PopupReservation(ParkingsMapMarkers.this);
         popupReservation.alert_msg(this,tvtitle,idparkin,iduser,cost,true);
     }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(LOG_TAG, "onDestroy()");
+        super.onDestroy();
+
+        ParkingsMapMarkers.this.finish();
+    }
+
+    public void toastShare(View view) {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.boton_app_compartir));
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
+
+    private void sendTestEmail() {
+
+        String id_user    = pref.getString(Constants.ID,"");
+        String name_user  = pref.getString(Constants.NAME, "");
+        String email_user = pref.getString(Constants.EMAIL, "");
+
+        BackgroundMail.newBuilder(this)
+                .withUsername("noreplyparkingya@gmail.com")
+                .withPassword(Constants.PASSWORD_EMAIL)
+                .withMailto(email_user)
+                .withSubject("CONFIRMACION DE RESERVA")
+                .withBody("Su reserva se encuentra a nombre de:\n"
+                          +name_user+ " \nNumero de reserva #"+id_user+"."+
+                          " \n\n\nGracias por reservar tu parqueadero en Parking Ya!")
+
+                .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
+                    @Override
+                    public void onSuccess() {
+                        //do some magic
+                    }
+                })
+                .withOnFailCallback(new BackgroundMail.OnFailCallback() {
+                    @Override
+                    public void onFail() {
+                        //do some magic
+                    }
+                })
+                .send();
+    }
+
+    /**Su funcion es algo similar a lo que se llama cuando se presiona el botón "Forzar Detención" o
+     * "Administrar aplicaciones", lo cuál mata la aplicación
+     * android.os.Process.killProcess(android.os.Process.myPid());
+     *
+     * finish(); Si solo quiere mandar la aplicación a segundo plano */
 }

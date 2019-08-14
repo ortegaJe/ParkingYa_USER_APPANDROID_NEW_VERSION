@@ -13,6 +13,7 @@ public class Constants {
     public static final String ID        = "ID";
 
     public static final String REQUEST_URL = "192.168.1.58:8080";
+    public static final String PASSWORD_EMAIL = "park100891";
 
 
 

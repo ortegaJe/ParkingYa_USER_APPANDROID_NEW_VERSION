@@ -51,6 +51,7 @@
             android:hint="Email"
             android:text="jeffersonj-o@hotmail.com"
             android:digits="abcdefghijklmnopqrstuvwxyz@.-_1234567890"
+            android:singleLine="true"
             android:inputType="textEmailAddress"
             android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"

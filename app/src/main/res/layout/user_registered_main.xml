@@ -1,265 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:design="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".UserRegistredMain"
-    android:id="@+id/RelativeLayoutUser">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_269sdp">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_231sdp"
-            android:background="@drawable/gradient_background"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/img_user_reg"
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_99sdp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_25sdp"
-                app:srcCompat="@drawable/user" />
-
-            <TextView
-                android:id="@+id/textView_NombreRegis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_user_reg"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:hint="name here"
-                android:textAlignment="center"
-                android:textColor="#FFFF"
-                android:textColorHint="#FFFF"
-                android:textSize="@dimen/_20sdp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="@dimen/_268sdp"
-            android:layout_height="@dimen/_61sdp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/_196sdp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="3">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Reservas"
-                        android:textAlignment="center"
-                        android:textSize="@dimen/_13sdp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:text="#"
-                        android:textColor="#008F4C"
-                        android:textSize="@dimen/_15sdp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Deudas"
-                        android:textAlignment="center"
-                        android:textSize="@dimen/_13sdp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:text="#"
-                        android:textColor="#008F4C"
-                        android:textSize="@dimen/_15sdp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Total reservas"
-                        android:textAlignment="center"
-                        android:textSize="@dimen/_13sdp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:text="#"
-                        android:textColor="#008F4C"
-                        android:textSize="@dimen/_15sdp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-    </RelativeLayout>
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/user_page_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_alignParentBottom="true"
-        design:menu="@menu/bottom_navigation"
-        android:background="?android:attr/windowBackground"
-
-        app:itemIconTint="@color/colorPrimaryDark"
-        app:itemTextColor="@color/colorPrimaryDark" />
-
-    <LinearLayout
-        android:id="@+id/dates_user_registered"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_290sdp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="@dimen/_230sdp"
-            android:background="@drawable/gradient_background_user_registered_fields"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_18sdp">
-
-            <ImageView
-                android:id="@+id/img_email_reg_user"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/ic_action_email" />
-
-            <TextView
-                android:id="@+id/txtV_email_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="jeffersonj-o@hotmail.com"
-                android:textColor="@color/colorPrimaryDark"
-                android:paddingLeft="@dimen/_15sdp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="@dimen/_230sdp"
-            android:background="@drawable/gradient_background_user_registered_fields"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_18sdp">
-
-            <ImageView
-                android:id="@+id/img_birth_reg_user"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/ic_action_birthreg" />
-
-            <TextView
-                android:id="@+id/textView_EdadRegis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="10/08/1991"
-                android:textColor="@color/colorPrimaryDark"
-                android:paddingLeft="@dimen/_15sdp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="@dimen/_230sdp"
-            android:background="@drawable/gradient_background_user_registered_fields"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_18sdp">
-
-            <ImageView
-                android:id="@+id/img_address_reg_user"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/ic_action_addressreg" />
-
-            <TextView
-                android:id="@+id/textView_addressRegis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="CALLE 75 #56-58"
-                android:textColor="@color/colorPrimaryDark"
-                android:paddingLeft="@dimen/_15sdp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="@dimen/_230sdp"
-            android:background="@drawable/gradient_background_user_registered_fields"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_18sdp">
-
-            <ImageView
-                android:id="@+id/img_tel_reg_user"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/ic_action_phonereg" />
-
-            <TextView
-                android:id="@+id/txtV_tel_reg_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="+573002777694"
-                android:textColor="@color/colorPrimaryDark"
-                android:paddingLeft="@dimen/_15sdp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </LinearLayout>
+    tools:context=".UserRegistredMain">
 
     <include layout="@layout/content_main"/>
 
@@ -267,21 +14,18 @@
         android:id="@+id/fab_add_pqr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_gravity="right"
-        android:layout_marginHorizontal="@dimen/_240sdp"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginTop="@dimen/_450sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         android:contextClickable="true"
         android:src="@drawable/ic_action_fab_pqr"
         android:tooltipText="Genera una PQR"
         app:backgroundTint="@color/colorOrange" />
 
+   <!--margin 32dp-->
 
 
-</RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
 
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:background="@drawable/gradient_background_popup"
+    android:id="@+id/RelativePqrUser"
+    tools:context=".PqrMain">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/pqr_title"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="58dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:hint="Notificar una sugerencia o queja"
+            android:paddingTop="@dimen/_10sdp"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textColorHint="#FFFF"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"/>
+
+        <EditText
+            android:id="@+id/pqr_text"
+            android:layout_width="330dp"
+            android:layout_height="149dp"
+            android:layout_below="@+id/pqr_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/border_box_pqr"
+            android:gravity="top"
+            android:hint="Escriba su sugerencia..."
+            android:inputType="textMultiLine"
+            android:maxLines="6"
+            android:scrollHorizontally="true"
+            android:textColor="#ffff"
+            android:textColorHint="#D8FFFFFF"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_pqr"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pqr_text"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="87dp"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginRight="82dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/button_style_gradient_login"
+            android:text="Enviar"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="#066336"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_go_map"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_pqr"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="87dp"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginRight="81dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/button_style_gradient_login"
+            android:drawableLeft="@drawable/ic_action_location"
+            android:text="Ir al mapa"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="#066336"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

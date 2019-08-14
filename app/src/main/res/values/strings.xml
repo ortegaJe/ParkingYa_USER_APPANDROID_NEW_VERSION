@@ -34,6 +34,11 @@
     <string name="picture_channel_name">Picture</string>
     <string name="SMS">SMS</string>
 
+    <!--Compartir-->
+    <string name="boton_app_compartir">Reserva en el parqueadero que más se adapte a tus necesidades
+                                       precio, ubicación y tranquilízate por estacionar sin
+                                       contratiempos con PARKING YA!</string>
+
 
 
 </resources>

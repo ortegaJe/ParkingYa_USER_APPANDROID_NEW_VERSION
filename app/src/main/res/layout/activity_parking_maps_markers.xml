@@ -16,6 +16,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/btn_share"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:onClick="toastShare"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/ic_action_sahre_app"
+            android:contextClickable="true" />
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"

@@ -66,7 +66,6 @@ public class http {
                         if (success == 1) {
                             id = jsonArray.getJSONObject(0).getString("identification");
                             if(id != null){
-                                //String newid = id.replaceFirst("^0+(?!$)","");
                                 interfaceListener.onPlacesListener(1, RegisterMain.class, jsonArray);
                             }else{
                                 String status = "ERROR";

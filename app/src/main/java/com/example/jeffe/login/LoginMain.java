@@ -4,17 +4,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,6 +25,10 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import es.dmoral.toasty.Toasty;
+
+import static com.loopj.android.http.AsyncHttpClient.LOG_TAG;
 
 public class LoginMain extends AppCompatActivity {
 
@@ -32,6 +39,8 @@ public class LoginMain extends AppCompatActivity {
     ProgressBar progress;
     TextView textView_RegisterLogin;
     Button btn_Enter;
+
+    int timer = 0;
 
 
     @Override
@@ -134,10 +143,43 @@ public class LoginMain extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        Log.d(LOG_TAG, "onDestroy()");
+        super.onDestroy();
+
+        LoginMain.this.finish();
+    }
+
 
     public void register( View view) {
         Intent intentRegistro= new Intent(LoginMain.this, RegisterMain.class);
         LoginMain.this.startActivity(intentRegistro);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (timer==0){
+            //Toast.makeText(getApplicationContext(),"Presione nuevamente para salir de la aplicación", Toast.LENGTH_SHORT).show();
+            Toasty.warning(getApplicationContext(),"Presione nuevamente para salir de la aplicación", Toast.LENGTH_SHORT).show();
+            timer++;
+        }else{
+            super.onBackPressed();
+        }
+
+        new CountDownTimer(3000, 1000){
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                timer=0;
+            }
+        }.start();
     }
 
 }

@@ -198,6 +198,7 @@ public class RegisterMain extends AppCompatActivity implements  interfaceListene
                         RegisterMain.this.startActivity(intent);
                         //notificationUsers();
                         Toasty.success(RegisterMain.this, ""+msg, Toast.LENGTH_LONG, true).show();
+                        finish();
 
                     }else{
                         AlertDialog.Builder builder= new AlertDialog.Builder(RegisterMain.this);

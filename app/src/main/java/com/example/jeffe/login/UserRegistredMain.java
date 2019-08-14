@@ -11,21 +11,26 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 
-public class UserRegistredMain extends AppCompatActivity {
+import java.util.ArrayList;
+
+import static com.loopj.android.http.AsyncHttpClient.LOG_TAG;
+
+
+public class UserRegistredMain extends AppCompatActivity   {
 
     private SharedPreferences pref;
     private final String MyPREFERENCES = "MyPrefs";
     private RelativeLayout RelativeLayoutUser;
     private TextView t1_name, t2_email, t4_age, t5_address, t6_tel;
-
-    PopupReservation popupReservationPqr;
 
 
     @Override
@@ -63,6 +68,14 @@ public class UserRegistredMain extends AppCompatActivity {
             public void onClick(View view) {
 //                 Snackbar.make(view, "Realiza una pqr", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show();
+                //Intent intentPqr = new Intent(UserRegistredMain.this, PqrMain.class);
+                //startActivity(intentPqr);
+                //finish();
+
+                Intent intentPqr = new Intent(UserRegistredMain.this, PqrMain.class);
+                intentPqr.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentPqr);
+                finish();
             }
         });
 
@@ -93,7 +106,7 @@ public class UserRegistredMain extends AppCompatActivity {
                                     editor.putBoolean(Constants.IS_LOGGED,false);
                                     editor.apply();
                                     startActivity(intentExit);
-                                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                                    //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                                     finish();
                                 }
                             })
@@ -102,15 +115,28 @@ public class UserRegistredMain extends AppCompatActivity {
                             snackBarView.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                             TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
                             textView.setTextColor(Color.WHITE);
-
                             break;
+
                         case R.id.nav_map:
                             Intent intentMap = new Intent(UserRegistredMain.this, ParkingsMapMarkers.class);
                             startActivity(intentMap);
                             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                            finish();
+                            break;
+
+                        case R.id.nav_user:
                             break;
                     }
                     return true;
                 }
             };
-    }
+
+    /**@Override
+    protected void onDestroy() {
+        Log.d(LOG_TAG, "onDestroy()");
+        super.onDestroy();
+
+        UserRegistredMain.this.finish();
+    }*/
+
+}
